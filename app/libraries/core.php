@@ -28,7 +28,23 @@
             require_once '../app/controllers/'. $this->currentController .'.php';
             $this->currentController = new $this->currentController;
 
-        
+            // check for the method part from the url 
+
+            if(isset($url[1])){
+                //check if the method exist 
+                if(method_exists($this->currentController,$url[1])){
+                    $this->currentMethod = $url[1];
+                    // now unset it in the array 
+                    unset($url[1]); 
+                }
+            }
+            
+            // get params 
+             $this->params = $url ? array_values($url) : [] ;
+
+             //call a callback with array of params 
+
+             call_user_func_array([$this->currentController,$this->currentMethod],$this->params);
         }
 
 
