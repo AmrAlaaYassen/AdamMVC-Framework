@@ -4,7 +4,7 @@
     class Pages extends Controller{
 
         public function __construct(){
-            
+           
         }
 
 
@@ -13,7 +13,13 @@
         }
 
         public function index (){
-            $this->view('pages/indexView');
+            
+           
+           $data = [
+               'title' =>'welcome'
+           ];
+           $this->view('pages/indexView',$data);
+
         }
     }
 ?>
