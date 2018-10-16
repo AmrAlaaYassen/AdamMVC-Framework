@@ -7,6 +7,6 @@ A MVC Framework built on PHP to help people build MVC Based Applications
 * change .htaccess files to map to your server folder and files 
 * Start Coding
 
-##### You can Find an application build based on the framework in the SharePost Folder
+##### Coming Soon: An Example with application
 
 
